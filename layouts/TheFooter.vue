@@ -24,6 +24,10 @@ footer.footer(data-footer)
     prompt: boolean;
   }
 
+  interface globalThis extends Window {
+    deferredPrompt: any;
+  }
+
   // Component definition.
   export default Vue.extend({
     // Name of the component.
@@ -36,12 +40,14 @@ footer.footer(data-footer)
       FooterCopyright,
       TheShortcut,
     },
+    // Data of the component
     data: (): Data => ({
-      prompt: null,
+      prompt: false,
     }),
+    // Mounted hook of the component
     mounted(): void {
       if (process.client) {
-        this.prompt = !!window?.deferredPrompt;
+        this.prompt = !!(window as globalThis)?.deferredPrompt;
         console.log('process');
       }
     },
