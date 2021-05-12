@@ -46,7 +46,7 @@ footer.footer(data-footer)
     }),
     // Mounted hook of the component
     mounted(): void {
-      function getPrompt() {
+      const getPrompt = (): void => {
         if (process.client) {
           this.prompt = !!(window as globalThis)?.deferredPrompt;
           console.log('process');
