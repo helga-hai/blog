@@ -39,6 +39,7 @@ export default {
       { rel: 'manifest', href: '/manifest.json' },
       { rel: 'prefetch', href: '/font.css' },
     ],
+    script: [{ src: '/beforeinstallprompt.js' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

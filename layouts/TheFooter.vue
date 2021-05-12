@@ -1,14 +1,15 @@
 <template lang="pug">
-  // Component template
-  footer.footer(data-footer)
-    .footer__partners
-      FooterPartners
+// Component template
+footer.footer(data-footer)
+  .footer__partners
+    FooterPartners
 
-    .footer__legal
-      .footer__company
-        FooterDisclaimer.footer__disclaimer
-        //FooterGambling.footer__gambling
-      FooterCopyright.footer__copyright
+  .footer__legal
+    .footer__company
+      FooterDisclaimer.footer__disclaimer
+      TheShortcut
+      //FooterGambling.footer__gambling
+    FooterCopyright.footer__copyright
 </template>
 
 <script lang="ts">
@@ -16,6 +17,7 @@
   import FooterPartners from './footer/FooterPartners.vue';
   import FooterDisclaimer from './footer/FooterDisclaimer.vue';
   import FooterCopyright from './footer/FooterCopyright.vue';
+  import TheShortcut from '@/layouts/TheShortcut.vue';
 
   // Component definition.
   export default {
@@ -27,6 +29,7 @@
       FooterPartners,
       FooterDisclaimer,
       FooterCopyright,
+      TheShortcut,
     },
   };
 </script>
