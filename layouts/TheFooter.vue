@@ -25,7 +25,7 @@ footer.footer(data-footer)
   }
 
   interface globalThis extends Window {
-    deferredPrompt: any;
+    deferredPrompt?: any;
   }
 
   // Component definition.
