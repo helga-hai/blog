@@ -46,10 +46,13 @@ footer.footer(data-footer)
     }),
     // Mounted hook of the component
     mounted(): void {
-      if (process.client) {
-        this.prompt = !!(window as globalThis)?.deferredPrompt;
-        console.log('process');
+      function getPrompt() {
+        if (process.client) {
+          this.prompt = !!(window as globalThis)?.deferredPrompt;
+          console.log('process');
+        }
       }
+      setTimeout(getPrompt, 5000)
     },
   });
 </script>
