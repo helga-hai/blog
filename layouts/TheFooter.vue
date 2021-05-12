@@ -24,10 +24,6 @@ footer.footer(data-footer)
     prompt: boolean;
   }
 
-  interface globalThis extends Window {
-    deferredPrompt?: any;
-  }
-
   // Component definition.
   export default Vue.extend({
     // Name of the component.
@@ -48,8 +44,7 @@ footer.footer(data-footer)
     mounted(): void {
       const getPrompt = (): void => {
         if (process.client) {
-          this.prompt = !!(window as globalThis)?.deferredPrompt;
-          console.log('process');
+          this.prompt = !!(window as Window)?.deferredPrompt;
         }
       }
       setTimeout(getPrompt, 5000)

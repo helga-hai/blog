@@ -1,7 +1,7 @@
 <template lang="pug">
 // Component template.
 button.shortcut(
-  @click="promptInstall",
+  @pointerup="promptInstall",
   data-shortcut)
   .shortcut__content
     .shortcut__text(data-shortcut-text)
