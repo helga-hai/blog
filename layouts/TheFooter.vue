@@ -7,20 +7,25 @@ footer.footer(data-footer)
   .footer__legal
     .footer__company
       FooterDisclaimer.footer__disclaimer
-      TheShortcut
+      TheShortcut(v-if="prompt")
       //FooterGambling.footer__gambling
     FooterCopyright.footer__copyright
 </template>
 
 <script lang="ts">
+  import Vue from 'vue';
   import BaseLogo from '@/components/base/BaseLogo.vue';
   import FooterPartners from './footer/FooterPartners.vue';
   import FooterDisclaimer from './footer/FooterDisclaimer.vue';
   import FooterCopyright from './footer/FooterCopyright.vue';
   import TheShortcut from '@/layouts/TheShortcut.vue';
 
+  interface Data {
+    prompt: boolean;
+  }
+
   // Component definition.
-  export default {
+  export default Vue.extend({
     // Name of the component.
     name: 'TheFooter',
     // Deps of the component
@@ -31,7 +36,16 @@ footer.footer(data-footer)
       FooterCopyright,
       TheShortcut,
     },
-  };
+    data: (): Data => ({
+      prompt: null,
+    }),
+    mounted(): void {
+      if (process.client) {
+        this.prompt = !!window?.deferredPrompt;
+        console.log('process');
+      }
+    },
+  });
 </script>
 
 <style lang="scss" scoped>
