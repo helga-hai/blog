@@ -17,6 +17,7 @@ export default {
       { name: 'msapplication-wide310x150logo', content: '/mstile-310x150.png' },
       { name: 'application-name', content: 'Fairspin' },
       { name: 'msapplication-config', content: '/browserconfig.xml' },
+      { name: 'theme-color', content: '#171717' },
     ],
     link: [
       { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },
