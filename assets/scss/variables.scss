@@ -5,7 +5,6 @@
 @import './function';
 @import '~@stylize/sass-func/css/font';
 
-
 // Color schema
 $color-0: #ffffff;
 $color-0_08: rgba($color-0, 0.08);
@@ -120,6 +119,109 @@ $app__background: $n_color-11;
 $app-header-height: 88px;
 $app-header-height--r10: 56px;
 
+// Component: Form
+$form-control__font: font($font--lg);
+$form-control__color: $color-0;
+$form-control__height: 40px;
+$form-control__height--xs: 32px;
+$form-control__height--lg: 48px;
+
+// Base: Button
+$base-button__padding: 0 indent(2.5);
+$base-button__font--xs: font($font--md);
+$base-button__font--sm: font($font--md);
+$base-button__font--lg: font($font--lg);
+$base-button__min-height--xs: $form-control__height--xs;
+$base-button__min-height--sm: $form-control__height;
+$base-button__min-height--lg: $form-control__height--lg;
+$base-button__border-radius--xs: $border-radius-xs;
+$base-button__border-radius--sm: $border-radius-xs;
+$base-button__border-radius--lg: $border-radius-md;
+$base-button-primary__color: $n_color-13;
+$base-button-primary__color--active: $n_color-17;
+$base-button-primary__color--disabled: $n_color-19;
+$base-button-primary__border: 1px solid $n_color-30;
+$base-button-primary__border--hover: 1px solid $n_color-32;
+$base-button-primary__border--active: 1px solid $n_color-34;
+$base-button-primary__border--disabled: 1px solid $n_color-22;
+$base-button-primary__shadow--hover: 0px 0 8px $n_color-32;
+$base-button-primary__shadow--active: 0px 0 8px $n_color-34;
+$base-button-primary__shadow--disabled: none;
+$base-button-primary__background: $n_color-30;
+$base-button-primary__background--hover: $n_color-32;
+$base-button-primary__background--active: $n_color-34;
+$base-button-primary__background--disabled: $n_color-22;
+$base-button-secondary__color: $n_color-30;
+$base-button-secondary__color--hover: $n_color-32;
+$base-button-secondary__color--active: $n_color-34;
+$base-button-secondary__color--disabled: $n_color-22;
+$base-button-secondary__border: 1px solid $n_color-30;
+$base-button-secondary__border--hover: 1px solid $n_color-32;
+$base-button-secondary__border--active: 1px solid $n_color-34;
+$base-button-secondary__border--disabled: 1px solid $n_color-22;
+$base-button-secondary__background: $n_color-30_1;
+$base-button-secondary__background--hover: $n_color-30_2;
+$base-button-secondary__background--active: transparent;
+$base-button-secondary__background--disabled: transparent;
+$base-button-inline__color: $n_color-30;
+$base-button-inline__color--active: $n_color-34;
+$base-button-inline__color--disabled: $n_color-22;
+$base-button-inline__text-shadow--hover: 0px 0 8px $n_color-30;
+$base-button-inline__text-shadow--active: 0px 0 8px $n_color-34;
+
+// Base: Close
+$base-close__size: $icon-size--sm;
+$base-close__padding: indent(1);
+$base-close__color: $n_color-13;
+$base-close__background: $n_color-30;
+$base-close__background--hover: $n_color-32;
+$base-close__box-shadow--hover: 0 0 5px 1px $n_color-32;
+
+// Base: Input
+$input_v2__border-color--error: $color-32;
+$input_v2-label__font: font($font--sm, 16px, 100);
+$input_v2-label__color: $color-0_7;
+$input_v2-label__color--error: $color-32;
+$input_v2-label__padding: 0 0 4px 6px;
+$input_v2-label__padding--border: 0 0 0 6px;
+$input_v2-label__position: -7px, 0, null, 9px;
+$input_v2-badge__position: 0, 0, 0, null;
+$input_v2-field__padding: 0;
+$input_v2-field__border: 1px solid $color-16_5;
+$input_v2-field__border-color--error: $color-32_5;
+$input_v2-field__background: $color-15;
+$input_v2-field__background--error: $color-16_7;
+$input_v2-field__background--focus: $color-16_5;
+$input_v2-field-control__font: font($font--xl, 1, 100);
+$input_v2-field-control__font--r10: font($font--md, 1, 100);
+$input_v2-field-control__color: $form-control__color;
+$input_v2-field-control__padding: 0 indent(1);
+$input_v2-field-control__padding--clear: 0 indent(2) 0 indent(3);
+$input_v2-field-control__background: transparent;
+$input_v2-field-control__transform: scale(0.75);
+$input_v2-field-control__transform--r10: none;
+$input_v2-field-control__min-height: $form-control__height;
+$input_v2-field-clear__size: 16px;
+$input_v2-field-clear__padding: indent(1);
+$input_v2-field-clear__background: $color-10_2;
+$input_v2-field-clear__border-radius: $border-circle;
+$input_v2-field-clear-image__size: 10px;
+
+// Base: Loader
+$base-loader-primary__color: $n_color-5;
+$base-loader-secondary__color: $n_color-32;
+$base-loader-dot__border-radius: 6px;
+$base-loader-dot__size: 6px;
+$base-loader-dot__margin: 0 2px;
+
+// Base: Logo
+$base-logo__size: 40px;
+$base-logo__padding: 0 indent(1);
+
+// Base: Overlay
+$base-overlay__position: 0 0 0 0 11002;
+$base-overlay__background: $color-11_7;
+
 // Layout
 $layout__z-index: 9999;
 $layout__margin: $app-header-height auto 0;
@@ -145,6 +247,41 @@ $header-auth-wallet__margin: 0 0 0 indent(1);
 $header-auth-wallet__margin--r10: 0;
 $header-secondary__min-height: 42px;
 $header-secondary__background: $n_color-13;
+
+// Layout: Header Language
+$header-language-toggle__font: font($font--md, 1rem);
+$header-language-toggle__color: $n_color-0;
+$header-language-toggle__padding: 0 indent(1);
+$header-language-toggle-flag__size: 1.5rem;
+$header-language-toggle-arrow__size: 1rem;
+$header-language-toggle-arrow__background: url('~@/assets/images/common/arrow-down.svg') no-repeat center;
+$header-language-list__margin: indent(1) 0 0 0;
+$header-language-list__position: 100%, null, null, -#{indent(1)};
+$header-language-list__background: $color-13;
+$header-language-list__border-radius: $border-radius-xs;
+$header-language-item__width: 90px;
+$header-language-item__padding: 0 indent(1);
+$header-language-item__background--hover: $color-16_5;
+
+// Layout Header: Shortcut
+$header-shortcut-item__font: font($font--lg);
+$header-shortcut-item__color: $n_color-0;
+$header-shortcut-item__margin: 2px 0 0 0;
+$header-shortcut-item__padding: 0 indent(2);
+$header-shortcut-item__padding--r10: 0 indent(1.5);
+$header-shortcut-item__padding--r20: 0 indent(2);
+$header-shortcut-item__border-with: 0 0 2px 0;
+$header-shortcut-item__border-color: transparent;
+$header-shortcut-item__border-color--hover: $n_color-0;
+$header-shortcut-item__border-color--active: $n_color-30;
+// prettier-ignore
+$header-shortcut-item__background--active: linear-gradient(180deg,
+  rgba(255, 206, 68, 0) 40.1%, rgba(255, 206, 68, 0.2) 100%);
+
+// Layout Header: Header Search
+$view-header-search__width: 42px;
+$view-header-search__width--r10: 200px;
+$view-header-search-result__width: 175%;
 
 // Layout: Footer
 $footer-layout__padding: indent(4) indent(2) 0;
@@ -191,18 +328,52 @@ $sidebar-wallet__background: transparent;
 $sidebar-catalogue__padding: indent(1) 0;
 $sidebar-scroll__offset: 137px;
 
-// Base: Logo
-$base-logo__size: 40px;
-$base-logo__padding: 0 indent(1);
+// Component: Language
+$language-item__font: font($font--md, 40px, 100);
+$language-item__color: $color-0;
+$language-item__color--hover: $color-23;
+$language-item__padding: 0 indent(3);
+$language-item-flag__size: 24px;
+$language-item-text__padding: 0 0 0 indent(1);
+$language-item-mark__size: indent(2);
+$language-item-mark__margin: 0 0 0 indent(1);
+$language-item-mark__background: url('~@/assets/images/common/mark--active.svg');
 
-// Base: Close
-$base-close__size: $icon-size--sm;
-$base-close__padding: indent(1);
-$base-close__color: $n_color-13;
-$base-close__background: $n_color-30;
-$base-close__background--hover: $n_color-32;
-$base-close__box-shadow--hover: 0 0 5px 1px $n_color-32;
+// Component: Game Search
+$search__width: 100%;
 
-// Base: Overlay
-$base-overlay__position: 0 0 0 0 11002;
-$base-overlay__background: $color-11_7;
+// Component: Game Search Field
+$search-field-badge__padding: 0 0 0 indent(1);
+$search-field-badge__min-width: 24px;
+$search-field-close__min-width: 38px;
+$search-field-close__margin: 0 0 0 indent(1);
+$search-field-close__background: $color-16;
+$search-field-close__border-radius: $border-radius-xs;
+$search-field-close-image__size: 16px;
+
+// Component: Search Result
+$search-result__z-index: 2;
+$search-result__width: 100%;
+$search-result__margin: indent(0.75) 0 0 0;
+$search-result__padding: indent(2) 0;
+$search-result__background: $color-16;
+$search-result__box-shadow: -1px 2px 6px 1px $color-10_5;
+$search-result__border-radius: $border-radius-xs;
+$search-result-total__font: font($font--md, 1rem, 100);
+$search-result-total__color: $color-0_7;
+$search-result-total__padding: 0 indent(2) indent(1);
+$search-result-list__max-height: 380px;
+$search-result-item__padding--recommend: indent(0.5) indent(2);
+$search-result-empty__font: font($font--sm, 1rem, 100);
+$search-result-empty__color: $color-0_7;
+$search-result-empty__padding: indent(1) indent(2);
+$search-result-empty-title__font: font($font--lg, 24px, 700);
+$search-result-empty-title__color: $color-0;
+$search-result-shadow__position: null, indent(4), 0, 0;
+$search-result-shadow__box-shadow: 0 -2px 19px 19px $color-16;
+$search-result-recommend__margin: indent(2) 0 -#{indent(2)};
+$search-result-recommend__padding: 0 0 indent(2);
+$search-result-recommend__background: $color-17_5;
+$search-result-recommend-title__font: font($font--lg, 1, normal);
+$search-result-recommend-title__color: $color-0;
+$search-result-recommend-title__padding: indent(2) indent(2) indent(1);

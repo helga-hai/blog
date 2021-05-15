@@ -1,4 +1,4 @@
-# testBlog
+# blog
 
 ## Build Setup
 

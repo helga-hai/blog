@@ -53,6 +53,8 @@ export default {
     { src: '~/plugins/load-script.js', mode: 'client' },
     { src: '~/plugins/vue-mq.js', mode: 'all' },
     { src: '~/plugins/click-outside.js', mode: 'client' },
+    { src: '~/plugins/VueAwesomeSwiper', mode: 'client' },
+    { src: '~/directives/hidden', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -89,7 +91,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    // use extend() method for nuxt
     extend(config, { isServer, isClient }) {
       config.module.rules.push({
         test: /\.vue$/,
@@ -98,6 +99,30 @@ export default {
           /* ... */
         },
       });
+    },
+    output: {
+      // path: path.resolve(__dirname, 'dist'),
+      filename: '[name].[hash:8].js',
+      sourceMapFilename: '[name].[hash:8].map',
+      chunkFilename: '[id].[hash:8].js',
+    },
+    extractCSS: {
+      allChunks: true,
+    },
+    optimization: {
+      splitChunks: {
+        name: true,
+      },
+    },
+  },
+  render: {
+    bundleRenderer: {
+      shouldPreload: (file, type) => {
+        return ['script', 'font', 'style'].includes(type);
+      },
+      shouldPrefetch: (file, type) => {
+        return ['style', 'font'].includes(type);
+      },
     },
   },
 };

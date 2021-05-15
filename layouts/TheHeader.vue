@@ -5,14 +5,21 @@
     .header__container
       .header__main
         .header__toggle(
-          v-if="$mq !== 'xs'",
+          v-if="$mq !== 'lg'",
           @click="$emit('toggleSidebar')",
           data-header-toggle)
         BaseLogo.header__logo(data-header-logo)
+        .header__content
+          HeaderShortcuts.header__shortcut
+        HeaderSearch.header__search
+        HeaderLanguage.header__language(v-if="$mq == 'lg'")
 </template>
 
 <script lang="ts">
   import BaseLogo from '@/components/base/BaseLogo.vue';
+  import HeaderShortcuts from './header/HeaderShortcuts.vue';
+  import HeaderSearch from './header/HeaderSearch.vue';
+  import HeaderLanguage from './header/HeaderLanguage.vue';
 
   // Component definition.
   export default {
@@ -21,6 +28,9 @@
     // Deps of the component
     components: {
       BaseLogo,
+      HeaderShortcuts,
+      HeaderSearch,
+      HeaderLanguage,
     },
   };
 </script>
@@ -33,11 +43,7 @@
 
     &__offset,
     &__container {
-      height: $header__height;
-
-      @include media('>=sm') {
-        height: $header__height--r10;
-      }
+      height: $header__height--r10;
     }
 
     &__container {
@@ -47,8 +53,7 @@
     }
 
     &__main,
-    &__content,
-    &__secondary {
+    &__content {
       flex-grow: 1;
       @include flex(row space-between);
     }
@@ -63,28 +68,11 @@
       padding: $header__padding;
 
       @include media('<sm') {
-        #{$selector}__shortcut,
-        #{$selector}__toggle {
+        #{$selector}__shortcut {
           display: none;
         }
       }
     }
-
-    //&__secondary {
-    //  min-height: $header-secondary__min-height;
-    //  background: $header-secondary__background;
-    //
-    //  @include media('>=sm') {
-    //    display: none;
-    //  }
-    //
-    //  ::v-deep .header-shortcut__nav-prev,
-    //  ::v-deep .header-shortcut__nav-next {
-    //    @include before {
-    //      box-shadow: 0 0 15px 12px $header-secondary__background;
-    //    }
-    //  }
-    //}
 
     &__toggle {
       cursor: pointer;
@@ -124,6 +112,11 @@
       flex: 1 1 0;
       margin-right: 16px;
       @include flex(row flex-start stretch);
+    }
+
+    &__language {
+      width: 100px;
+      @include flex(row center center);
     }
   }
 </style>

@@ -1,15 +1,16 @@
 <template lang="pug">
-// Component template
-footer.footer(data-footer)
-  .footer__partners
-    FooterPartners
+  // Component template
+  footer.footer(data-footer)
+    .footer__partners
+      FooterPartners
 
-  .footer__legal
-    .footer__company
-      FooterDisclaimer.footer__disclaimer
-      TheShortcut(v-if="prompt")
-      //FooterGambling.footer__gambling
-    FooterCopyright.footer__copyright
+    .footer__legal
+      .footer__company
+        FooterDisclaimer.footer__disclaimer
+        client-only
+          TheShortcut(v-if="prompt")
+
+      FooterCopyright.footer__copyright
 </template>
 
 <script lang="ts">
@@ -22,6 +23,10 @@ footer.footer(data-footer)
 
   interface Data {
     prompt: boolean;
+  }
+
+  interface GlobalThis extends Window {
+    deferredPrompt?: any;
   }
 
   // Component definition.
@@ -44,10 +49,10 @@ footer.footer(data-footer)
     mounted(): void {
       const getPrompt = (): void => {
         if (process.client) {
-          this.prompt = !!(window as Window)?.deferredPrompt;
+          this.prompt = !!(window as GlobalThis)?.deferredPrompt;
         }
-      }
-      setTimeout(getPrompt, 5000)
+      };
+      setTimeout(getPrompt, 5000);
     },
   });
 </script>

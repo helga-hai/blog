@@ -36,7 +36,7 @@ export default {
    * @param state Common State.
    * @return Ajax cancel tokens.
    */
-  ajaxCancelTokens({ ajaxCancelTokens }: CommonState): Record<string, CancelTokenSource> {
+  ajaxCancelTokens({ ajaxCancelTokens }: CommonState): Record<string, CancelTokenSource> | null {
     return ajaxCancelTokens;
   }
 };

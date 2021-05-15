@@ -113,13 +113,9 @@
       position: fixed;
       top: 0;
       bottom: 0;
-      right: 0;
+      right: auto;
+      left: 0;
       z-index: 11003;
-
-      @include media('>=sm') {
-        right: auto;
-        left: 0;
-      }
     }
 
     &__overlay {
@@ -174,23 +170,11 @@
 
   .slide-enter,
   .slide-leave-to {
-    transform: translateX(100%);
+    transform: translateX(-100%);
   }
 
   .slide-leave,
   .slide-enter-to {
     transform: translateX(0);
-  }
-
-  @include media('>=sm') {
-    .slide-enter,
-    .slide-leave-to {
-      transform: translateX(-100%);
-    }
-
-    .slide-leave,
-    .slide-enter-to {
-      transform: translateX(0);
-    }
   }
 </style>

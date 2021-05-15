@@ -1,7 +1,7 @@
 <template lang="pug">
   // Component template.
   RouterLink.base-logo(
-    :to="{ name: 'home' }",
+    to="/",
     data-base-logo)
     img.base-logo__image(
       :src="require('@/assets/images/brand/logo.svg?inline')",

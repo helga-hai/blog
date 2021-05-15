@@ -10,9 +10,9 @@ export default {
    * Action used to reset the module state to initial data.
    * @param vuex Action Context.
    */
-  resetState({ commit }: ActionContext<CommonState, unknown>): void {
-    commit('resetState');
-  },
+  // resetState({ commit }: ActionContext<CommonState, unknown>): void {
+  //   commit('resetState');
+  // },
 
   /**
    * Action used to change the ready state of the functionality.
