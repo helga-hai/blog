@@ -48,8 +48,10 @@
     // Mounted hook of the component
     mounted(): void {
       const getPrompt = (): void => {
+        console.log('getPrompt',process.client)
         if (process.client) {
           this.prompt = !!(window as GlobalThis)?.deferredPrompt;
+          console.log('prompt',this.prompt)
         }
       };
       setTimeout(getPrompt, 5000);
