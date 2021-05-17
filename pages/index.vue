@@ -16,7 +16,7 @@
 
 <style lang="scss" scoped>
   .main {
-    color: #ffffff;
+    color: #FFFFFF;
     text-align: center;
   }
 </style>

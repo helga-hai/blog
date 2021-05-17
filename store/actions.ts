@@ -7,14 +7,6 @@ import type { CommonState } from '~/store/state';
 // and can contain asynchronous operations.
 export default {
   /**
-   * Action used to reset the module state to initial data.
-   * @param vuex Action Context.
-   */
-  // resetState({ commit }: ActionContext<CommonState, unknown>): void {
-  //   commit('resetState');
-  // },
-
-  /**
    * Action used to change the ready state of the functionality.
    * @param vuex Action Context.
    * @param ready Readiness state.

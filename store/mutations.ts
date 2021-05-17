@@ -8,14 +8,6 @@ import type { Error } from '~/interface/Error';
 // state in the store and must be synchronous.
 export default {
   /**
-   * Reset current state with initial data.
-   * @param state Common State.
-   */
-  // resetState(state: CommonState): void {
-  //   Object.assign(state, cloneDeep(state[reset]));
-  // },
-
-  /**
    * Set readiness state of functionality.
    * @param state Common State.
    * @param ready Readiness state.

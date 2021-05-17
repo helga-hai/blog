@@ -218,6 +218,10 @@ $base-loader-dot__margin: 0 2px;
 $base-logo__size: 40px;
 $base-logo__padding: 0 indent(1);
 
+// Base: Scroll
+$base-scroll__background: $n_color-0_2;
+$base-scroll-toggle__size: 4px;
+
 // Base: Overlay
 $base-overlay__position: 0 0 0 0 11002;
 $base-overlay__background: $color-11_7;
@@ -283,6 +287,38 @@ $view-header-search__width: 42px;
 $view-header-search__width--r10: 200px;
 $view-header-search-result__width: 175%;
 
+// Layout Sidebar
+$sidebar__width: 320px;
+$sidebar__shadow: 7px 0px 4px $color-10_5;
+$sidebar__background: $color-13;
+$sidebar-block__padding: 0 indent(3);
+$sidebar-block__border: 1px solid $color-16_7;
+$sidebar-header__padding: indent(2) 0;
+$sidebar-close__margin: 0 indent(-1) 0 0;
+$sidebar-auth__padding: 0 0 indent(3) 0;
+$sidebar-wallet__min-width: 100%;
+$sidebar-wallet__background: transparent;
+$sidebar-catalogue__padding: indent(1) 0;
+$sidebar-scroll__offset: 129px;
+
+// Layout Sidebar: Navigation
+$sidebar-navigation-item__font: font($font--lg, 55px, 300);
+$sidebar-navigation-item__color: $n_color-0;
+$sidebar-navigation-item__padding: 0 indent(3);
+$sidebar-navigation-item__background--hover: $color-15;
+$sidebar-navigation-item__border: 1px solid $color-16_7;
+$sidebar-navigation-item__border--active: 2px solid $color-23;
+$sidebar-navigation-item-arrow__size: 16px;
+$sidebar-navigation-item-arrow__background: no-repeat center url('~@/assets/images/common/arrow-down-large.svg');
+$sidebar-navigation-item-badge__margin: 0 0 0 indent(1);
+$sidebar-navigation-sub-item__color: $color-0_5;
+$sidebar-navigation-sub-item__font: font($font--md, 38px, 300);
+$sidebar-navigation-sub-item__padding: 0 indent(3);
+$sidebar-navigation-sub-item__background--hover: $color-16_5;
+$sidebar-navigation-group-content__padding: 0 0 indent(3) 0;
+$sidebar-navigation-lang-toggle__padding: 0 0 0 indent(1);
+$sidebar-navigation-lang-content__background: $color-15;
+
 // Layout: Footer
 $footer-layout__padding: indent(4) indent(2) 0;
 $footer-layout__max-width: $app__max-width;
@@ -313,20 +349,6 @@ $footer-copyright__color: $n_color-24;
 // Layout: Footer Disclaimer
 $footer-disclaimer__font: font($font--md, 1.25rem);
 $footer-disclaimer__color: $n_color-24;
-
-// Layout Sidebar
-$sidebar__width: 320px;
-$sidebar__shadow: 7px 0px 4px $color-10_5;
-$sidebar__background: $color-13;
-$sidebar-block__padding: 0 indent(3);
-$sidebar-block__border: 1px solid $color-16_7;
-$sidebar-header__padding: indent(2) 0;
-$sidebar-close__margin: 0 indent(-1) 0 0;
-$sidebar-auth__padding: 0 0 indent(3) 0;
-$sidebar-wallet__min-width: 100%;
-$sidebar-wallet__background: transparent;
-$sidebar-catalogue__padding: indent(1) 0;
-$sidebar-scroll__offset: 137px;
 
 // Component: Language
 $language-item__font: font($font--md, 40px, 100);

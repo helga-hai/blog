@@ -1,23 +1,23 @@
 <template lang="pug">
-// Component template
-.layout(
-  :class="classes",
-  @keydown="keyup",
-  @mousedown="mouseup")
-  TheHeader.layout__header(@toggleSidebar="toggle")
-  .layout__router
-    Nuxt
+  // Component template
+  .layout(
+    :class="classes",
+    @keydown="keyup",
+    @mousedown="mouseup")
+    TheHeader.layout__header(@toggleSidebar="toggle")
+    .layout__router
+      Nuxt
 
-  transition(name="fade")
-    BaseOverlay.layout__overlay(v-if="$store.state.layout.overlay")
+    transition(name="fade")
+      BaseOverlay.layout__overlay(v-if="$store.state.layout.overlay")
 
-  transition(name="slide")
-    TheSidebar.layout__sidebar(
-      v-if="sidebar",
-      @close="toggle",
-      v-click-outside="toggle")
+    transition(name="slide")
+      TheSidebar.layout__sidebar(
+        v-if="sidebar",
+        @close="toggle",
+        v-click-outside="toggle")
 
-  TheFooter
+    TheFooter
 </template>
 
 <script lang="ts">

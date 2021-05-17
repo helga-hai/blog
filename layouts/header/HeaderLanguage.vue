@@ -30,7 +30,6 @@
   import { mapGetters } from 'vuex';
   import Language from '../TheLanguage.vue';
 
-  // Component data.
   interface Data {
     // Determine whether list is opened.
     isActive: boolean;
@@ -64,12 +63,7 @@
   @import '~@stylize/sass-mixin';
 
   .header-language {
-    display: none;
     position: relative;
-
-    @include media('>=md') {
-      //display: flex;
-    }
 
     &__toggle {
       cursor: pointer;

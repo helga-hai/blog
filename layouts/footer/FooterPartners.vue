@@ -19,14 +19,6 @@
           alt="TruePlay",
           draggable="false")
 
-      .footer-partner__link.footer-partner__company-curacao.footer-partner__company-link(
-        data-footer-partner-company-item="curacao")
-        div(
-          :id="'ceg-' + key",
-          :data-ceg-seal-id="key",
-          data-ceg-image-size="32",
-          data-ceg-image-type="basic-small")
-
     .footer-partner__currency(data-footer-partner-currency)
       .footer-partner__link.footer-partner__currency-link(
         v-for="currency in currencies",
@@ -62,8 +54,6 @@
     name: 'FooterPartners',
     // Data of the component.
     data: (): Data => ({
-      // Key to validate curacao license.
-      key: '46399d31-9c70-4464-81eb-ca42db7f8f5f',
       currencies: [
         'visa',
         'mir',
@@ -88,11 +78,6 @@
         'paxos',
       ],
     }),
-    // Mounted hook of the component.
-    mounted(): void {
-      // Load curacao license validator on main website.
-      this.$loadScript(`https://${this.key}.curacao-egaming.com/ceg-seal.js`);
-    },
   });
 </script>
 

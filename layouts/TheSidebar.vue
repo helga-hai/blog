@@ -7,21 +7,17 @@
         BaseClose.sidebar__close(
           @close="$emit('close')",
           data-sidebar-close)
-      //.sidebar__auth
-        AuthWallet.sidebar__wallet(v-if="logged")
-        AuthGuest.sidebar__guest(v-else)
-    //BaseScroll.sidebar__scroll(data-sidebar-scroll)
+      BackToCasino.sidebar__back
+    BaseScroll.sidebar__scroll(data-sidebar-scroll)
       Navigation.sidebar__navigation(data-sidebar-navigation)
 </template>
 
 <script lang="ts">
-  import { mapState } from 'vuex';
   import BaseLogo from '@/components/base/BaseLogo.vue';
-  // import BaseClose from '@/components/base/BaseClose.vue';
-  // import BaseScroll from '@/components/base/BaseScroll.vue';
-  // import AuthGuest from './auth/AuthGuest.vue';
-  // import AuthWallet from './auth/AuthWallet.vue';
-  // import Navigation from './sidebar/SidebarNavigation.vue';
+  import BaseClose from '@/components/base/BaseClose.vue';
+  import BaseScroll from '@/components/base/BaseScroll.vue';
+  import Navigation from './sidebar/SidebarNavigation.vue';
+  import BackToCasino from './common/BackToCasino.vue';
 
   // Component definition.
   export default {
@@ -30,14 +26,11 @@
     // Deps of the component.
     components: {
       BaseLogo,
-      // BaseClose,
-      // BaseScroll,
-      // AuthGuest,
-      // AuthWallet,
-      // Navigation
+      BaseClose,
+      BaseScroll,
+      Navigation,
+      BackToCasino,
     },
-    // Computed of the component.
-    //computed: mapState('account', ['logged'])
   };
 </script>
 
@@ -107,6 +100,10 @@
 
     &__scroll {
       @include absolute($sidebar-scroll__offset, 0, 0, 0);
+    }
+
+    &__back ::v-deep .back-to-casino__text {
+      margin: 0 0 16px 0;
     }
   }
 </style>

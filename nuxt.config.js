@@ -95,13 +95,10 @@ export default {
       config.module.rules.push({
         test: /\.vue$/,
         loader: 'vue-svg-inline-loader',
-        options: {
-          /* ... */
-        },
+        options: {},
       });
     },
     output: {
-      // path: path.resolve(__dirname, 'dist'),
       filename: '[name].[hash:8].js',
       sourceMapFilename: '[name].[hash:8].map',
       chunkFilename: '[id].[hash:8].js',

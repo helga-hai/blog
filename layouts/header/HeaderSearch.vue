@@ -27,14 +27,14 @@
     }),
     // Computed of the component.
     computed: {
-      // Get CSS classes based on props.
       cssClasses(): string {
         return this.isActive ? `header-search--active` : '';
       },
     },
+    // Methods of the component.
     methods: {
       openField(): void {
-        this.isActive = !this.isActive
+        this.isActive = !this.isActive;
       },
     },
   });

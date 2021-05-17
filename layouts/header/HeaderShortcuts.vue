@@ -6,7 +6,7 @@
       :options="swiperOptions",
       data-header-shortcut-list)
       SwiperSlide.header-shortcut__item(v-if="!sidebar")
-        HeaderBackToCasino.header-shortcut__back
+        BackToCasino.header-shortcut__back
 
       SwiperSlide.header-shortcut__item
         NuxtLink.header-shortcut__link(to="/")
@@ -26,7 +26,7 @@
             | Game Reviews
 
       SwiperSlide.header-shortcut__item(v-if="sidebar")
-        HeaderBackToCasino.header-shortcut__back
+        BackToCasino.header-shortcut__back
 
       template(#button-prev)
         .header-shortcut__nav-prev
@@ -38,11 +38,10 @@
 <script lang="ts">
   import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
   import SwiperMixin from '@/mixins/SwiperMixin';
-  import HeaderBackToCasino from './HeaderBackToCasino.vue';
+  import BackToCasino from '../common/BackToCasino.vue';
   import type { SwiperOptions } from 'swiper';
   import type { PropType } from 'vue';
 
-  // Component data.
   interface Data {
     swiperOptions: SwiperOptions;
   }
@@ -57,7 +56,7 @@
     components: {
       Swiper,
       SwiperSlide,
-      HeaderBackToCasino,
+      BackToCasino,
     },
     props: {
       sidebar: {

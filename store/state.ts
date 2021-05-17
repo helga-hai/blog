@@ -1,11 +1,5 @@
-import cloneDeep from 'lodash/cloneDeep';
 import type { CancelTokenSource } from 'axios';
 import type { Error } from '~/interface/Error';
-
-// /**
-//  * The key to reset the data.
-//  */
-// export const reset: unique symbol = Symbol?.for('__reset__');
 
 /**
  * Describes the common state.
@@ -20,8 +14,6 @@ export interface CommonState {
   // Ajax cancel tokens.
   ajaxCancelTokens: Record<string, CancelTokenSource> | null;
 }
-
-
 
 /**
  * The initial state of the layout.

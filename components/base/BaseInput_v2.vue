@@ -13,10 +13,7 @@
       slot(name="label")
 
     .base-input__field(
-      :class=`{
-        'base-input__field--error': error,
-        'base-input__field--focus': isFocus
-      }`,
+      :class="cssClasses",
       data-input-field)
       .base-input__badge(data-input-bagde-left)
         slot(
@@ -68,10 +65,6 @@
   export default Vue.extend({
     // Name of the component.
     name: 'BaseInput',
-    // Data of the component.
-    data: (): any => ({
-      isFocus: false,
-    }),
     // Props of the component.
     props: {
       id: {
@@ -125,6 +118,10 @@
         type: Boolean,
       },
     },
+    // Data of the component.
+    data: (): any => ({
+      isFocus: false,
+    }),
     // Mounted hook of the component.
     mounted(): void {
       if (this.focus) {
@@ -136,6 +133,12 @@
     },
     // Defined computed of the component.
     computed: {
+      cssClasses(): Record<string, boolean> {
+        return {
+          'base-input__field--error': this.error,
+          'base-input__field--focus': this.isFocus,
+        };
+      },
       uniqueId(): string {
         return this.id || uniqueId('dynamic_field_');
       },

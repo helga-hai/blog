@@ -16,10 +16,10 @@
 <script lang="ts">
   import Vue from 'vue';
   import BaseLogo from '@/components/base/BaseLogo.vue';
+  import TheShortcut from '@/layouts/TheShortcut.vue';
   import FooterPartners from './footer/FooterPartners.vue';
   import FooterDisclaimer from './footer/FooterDisclaimer.vue';
   import FooterCopyright from './footer/FooterCopyright.vue';
-  import TheShortcut from '@/layouts/TheShortcut.vue';
 
   interface Data {
     prompt: boolean;
@@ -48,11 +48,7 @@
     // Mounted hook of the component
     mounted(): void {
       const getPrompt = (): void => {
-        console.log('getPrompt',process.client)
-        if (process.client) {
-          this.prompt = !!(window as GlobalThis)?.deferredPrompt;
-          console.log('prompt',this.prompt)
-        }
+        this.prompt = !!(window as GlobalThis)?.deferredPrompt;
       };
       setTimeout(getPrompt, 5000);
     },

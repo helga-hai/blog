@@ -31,13 +31,13 @@
     }),
     // Mounted hook of the component
     mounted(): void {
-      if (navigator.appVersion.indexOf('Win') != -1) {
+      if (navigator.appVersion.includes('Win')) {
         this.os = 'windows';
-      } else if (navigator.appVersion.indexOf('Mac') != -1) {
+      } else if (navigator.appVersion.includes('Mac')) {
         this.os = 'mac';
-      } else if (navigator.userAgent.indexOf('Android') != -1) {
+      } else if (navigator.userAgent.includes('Android')) {
         this.os = 'android';
-      } else if (navigator.userAgent.indexOf('like Mac') != -1) {
+      } else if (navigator.userAgent.includes('like Mac')) {
         this.os = 'ios';
       }
     },

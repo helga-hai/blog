@@ -1,6 +1,8 @@
 <template lang="pug">
   // Component template.
-  .base-close(@click="$emit('close', $event)", data-base-close)
+  .base-close(
+    @click="$emit('close', $event)",
+    data-base-close)
     .base-close__graphic
       img(
         src="@/assets/images/common/close-small.svg",
@@ -12,7 +14,7 @@
   // Component definition.
   export default {
     // Name of the component.
-    name: 'BaseClose'
+    name: 'BaseClose',
   };
 </script>
 

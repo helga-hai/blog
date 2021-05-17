@@ -4,9 +4,7 @@
 export interface ConfigsState {
   lang: string;
   langs: string[];
-  mirror?: boolean;
   cdnUrl: string;
-  __PRERENDER__$?: boolean;
 }
 
 /**

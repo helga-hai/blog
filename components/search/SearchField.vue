@@ -37,8 +37,8 @@
     // Props of the component.
     props: {
       term: String,
-      close: Boolean
-    }
+      close: Boolean,
+    },
   };
 </script>
 
