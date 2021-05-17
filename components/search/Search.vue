@@ -9,6 +9,7 @@
 </template>
 
 <script lang="ts">
+  import Vue from 'vue';
   // Component data.
   interface Data {
     term: string;
@@ -21,7 +22,7 @@
   }
 
   // Single File Component.
-  export default {
+  export default Vue.extend({
     // Name of the component.
     name: 'Search',
     // Data of the component.
@@ -37,7 +38,7 @@
     // // Props of the component.
     props: {
       replace: {
-        type: Boolean as PropType<boolean>,
+        type: Boolean,
       },
     },
     // Computed of the component.
@@ -50,7 +51,7 @@
     methods: {
       loadByTerm(term: string): void {},
     },
-  };
+  });
 </script>
 
 <style lang="scss" scoped>

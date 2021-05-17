@@ -19,7 +19,7 @@
     methods: {
       // Trigger scroll event with throttle.
       propagateScroll: throttle(function (event: unknown): void {
-        this.$emit('scroll', event);
+        (this as any).$emit('scroll', event);
       }, 150),
     },
   });
