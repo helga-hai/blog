@@ -37,46 +37,28 @@
 </template>
 
 <script lang="ts">
-  import Vue from 'vue';
-  import { mapGetters } from 'vuex';
+  import { Component, Vue } from 'nuxt-property-decorator';
   import TheLanguage from '../TheLanguage.vue';
+  import { namespace } from 'vuex-class';
 
-  // Component data
-  interface Data {
-    group: {
-      about: boolean;
-      lang: boolean;
+  const configs = namespace('configs');
+
+  @Component({
+    components: { TheLanguage },
+  })
+  export default class SidebarNavigation extends Vue {
+    private group: Record<string, boolean> = {
+      about: false,
+      lang: false,
     };
-  }
 
-  // Single File Component
-  export default Vue.extend({
-    // Name of the component
-    name: 'SidebarNavigation',
-    // Deps of the component
-    components: {
-      // BaseBadge,
-      TheLanguage,
-    },
-    // Data of the component
-    data: (): Data => ({
-      group: {
-        about: false,
-        lang: false,
-      },
-    }),
-    // Computed of the component
-    computed: {
-      ...mapGetters('configs', ['activeLang']),
-    },
-    // Methods of the component
-    methods: {
-      // isRouteActive,
-      toggle(id: string): void {
-        this.group[id] = !this.group[id];
-      },
-    },
-  });
+    @configs.Getter
+    public activeLang!: string;
+
+    public toggle(val: string): void {
+      this.group[val] = !this.group[val];
+    }
+  }
 </script>
 
 <style lang="scss" scoped>

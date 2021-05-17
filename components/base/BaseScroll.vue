@@ -18,9 +18,12 @@
     // Methods of the component.
     methods: {
       // Trigger scroll event with throttle.
-      propagateScroll: throttle(function (event: unknown): void {
-        (this as any).$emit('scroll', event);
-      }, 150),
+      propagateScroll(event: unknown) {
+        return throttle((): void => this.onScroll(event), 150);
+      },
+      onScroll(event: unknown): void {
+        this.$emit('scroll', event);
+      },
     },
   });
 </script>

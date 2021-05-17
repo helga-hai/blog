@@ -33,52 +33,34 @@
 </template>
 
 <script lang="ts">
-  import Vue from 'vue';
+  import { Component, Vue } from 'nuxt-property-decorator';
 
-  // Component data.
-  interface Data {
-    key: string;
-    currencies: string[];
+  @Component
+  export default class FooterPartners extends Vue {
+    private currencies: Array<string> = [
+      'visa',
+      'mir',
+      'ethereum',
+      'bitcoin',
+      'tether',
+      'dash',
+      'yandex_money',
+      'monero',
+      'dogecoin',
+      'neo',
+      'cardano',
+      'bitcoincash',
+      'ripple',
+      'nem',
+      'stellar',
+      'binance',
+      'usdcoin',
+      'b2bx',
+      'eos',
+      'gemini',
+      'paxos',
+    ];
   }
-
-  // Declare an instance property
-  declare module 'vue/types/vue' {
-    interface Vue {
-      $loadScript: any;
-    }
-  }
-
-  // Component definition.
-  export default Vue.extend({
-    // Name of the component.
-    name: 'FooterPartners',
-    // Data of the component.
-    data: (): Data => ({
-      currencies: [
-        'visa',
-        'mir',
-        'ethereum',
-        'bitcoin',
-        'tether',
-        'dash',
-        'yandex_money',
-        'monero',
-        'dogecoin',
-        'neo',
-        'cardano',
-        'bitcoincash',
-        'ripple',
-        'nem',
-        'stellar',
-        'binance',
-        'usdcoin',
-        'b2bx',
-        'eos',
-        'gemini',
-        'paxos',
-      ],
-    }),
-  });
 </script>
 
 <style lang="scss" scoped>
