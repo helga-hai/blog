@@ -1,9 +1,6 @@
-//@use './function' as *;
-//@use './font' as * with (
-//  $base-font: 'Stolzl'
-//);
 @import './function';
 @import '~@stylize/sass-func/css/font';
+$base-font: 'Stolzl';
 
 // Color schema
 $color-0: #ffffff;
@@ -268,12 +265,12 @@ $header-language-item__padding: 0 indent(1);
 $header-language-item__background--hover: $color-16_5;
 
 // Layout Header: Shortcut
-$header-shortcut-item__font: font($font--lg);
+$header-shortcut-item__font: font($font--md);
 $header-shortcut-item__color: $n_color-0;
 $header-shortcut-item__margin: 2px 0 0 0;
-$header-shortcut-item__padding: 0 indent(2);
+$header-shortcut-item__padding: 0 indent(1.5);
 $header-shortcut-item__padding--r10: 0 indent(1.5);
-$header-shortcut-item__padding--r20: 0 indent(2);
+$header-shortcut-item__padding--r20: 0 indent(1.5);
 $header-shortcut-item__border-with: 0 0 2px 0;
 $header-shortcut-item__border-color: transparent;
 $header-shortcut-item__border-color--hover: $n_color-0;

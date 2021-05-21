@@ -78,7 +78,7 @@
     }
 
     &__company {
-      @include flex(column);
+      @include flex(column-reverse);
 
       @include media('>=md') {
         @include flex(row space-between);
